@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>キムワイプイベント</title>
+  <title>キムワイプ卓球</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     html {
-      scroll-padding-top: 120px; /* ヘッダーの高さ分の余白 */
+      scroll-padding-top: 120px;
     }
     body {
       font-family: 'Helvetica Neue', sans-serif;
       margin: 0;
       padding: 0;
       color: #333;
-      background: url('background.jpg') no-repeat center center fixed;
+      background: url('background.png') no-repeat center center fixed;
       background-size: cover;
       scroll-behavior: smooth;
     }
     header {
-      background: rgba(0, 128, 0, 0.85); /* 緑色主体 */
+      background: rgba(0, 128, 0, 0.85);
       color: white;
       padding: 2rem;
       text-align: center;
@@ -87,8 +87,24 @@
       background: rgba(238,238,238,0.9);
       color: #555;
     }
-
-    /* ローディング画面 */
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    form button {
+      background-color: #0a8c0a;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    form button:hover {
+      background-color: #4caf50;
+    }
     #loader {
       position: fixed;
       top: 0;
@@ -116,7 +132,7 @@
       const loader = document.getElementById('loader');
       setTimeout(() => {
         loader.classList.add('hidden');
-      }, 2000); // 2秒後にフェードアウト
+      }, 2000);
     });
 
     document.addEventListener('scroll', () => {
@@ -135,11 +151,13 @@
 
 <header>
   <h1>キムワイプ卓球</h1>
-  <p>～　　～</p>
+  <p>～あいうえお～</p>
   <nav>
     <a href="#info">基本情報</a>
     <a href="#overview">概要</a>
     <a href="#sns">SNS</a>
+    <a href="#access">アクセス</a>
+    <a href="#contact">お問い合わせ</a>
     <a href="#support">協賛・後援</a>
   </nav>
 </header>
@@ -147,41 +165,56 @@
 <section id="info">
   <h2>基本情報</h2>
   <ul>
-    <li><strong>開催日:</strong> 2025年9月13日/9月14日</li>
-    <li><strong>時間:</strong> 13日　〇時～〇時</li>
-    <li><strong>時間:</strong> 14日　〇時～〇時</li>
-    <li><strong>場所:</strong> 都立科学技術高校405講義室</li>
+    <li><strong>開催日:</strong> 2025年9月13日<br>9月14日</li>
+    <li><strong>時間:</strong> 〇時～〇時</li>
+    <li><strong>場所:</strong> 校内4階406講義室</li>
   </ul>
 </section>
 
 <section id="overview">
   <h2>概要</h2>
   <p>
-    このイベントでは新しい体験や学びを楽しんでいただけます。<br>
-    卓球を予定しています。
+    このイベントでは、〇〇な活動を通じて参加者同士の交流を深め、
+    新しい体験や学びを楽しんでいただけます。<br>
+    ⚪︎を予定しています。
   </p>
 </section>
 
 <section id="sns">
   <h2>SNSのご紹介</h2>
   <div class="sns-links">
-    <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
-    <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
-    <a href="#"><i class="fab fa-facebook"></i>Facebook</a>
+    <a href="https://twitter.com/2025sthkimwipe" target="_blank"><i class="fab fa-twitter"></i>@2025sthkimwipe</a>
+    <a href="https://instagram.com/sthkimwipe" target="_blank"><i class="fab fa-instagram"></i>@sthkimwipe</a>
   </div>
+</section>
+
+<section id="access">
+  <h2>アクセス</h2>
+  <p>東京メトロ半蔵門、都営地下鉄新宿線住吉駅から徒歩10分、都営地下鉄新宿線西大島駅から徒歩10分</p>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.0000!2d139.0000!3d35.0000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b0000000000%3A0x0000000000000000!2z44CSMTAwLTAwMDAg5p2x5Lqs6YO95Lit5aSn6Kqe5a6J5Yy66Lev5aSn77yR5LiB55uu77yR77yQ!5e0!3m2!1sja!2sjp!4v0000000000000" width="100%" height="300" style="border:0; border-radius:8px;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+<section id="contact">
+  <h2>お問い合わせ</h2>
+  <form action="mailto:2025sthkimwipe.tabletennis@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="お名前" required>
+    <input type="email" name="email" placeholder="メールアドレス" required>
+    <textarea name="message" rows="5" placeholder="お問い合わせ内容" required></textarea>
+    <button type="submit">送信</button>
+  </form>
 </section>
 
 <section id="support">
   <h2>協賛・後援</h2>
   <p>本イベントは以下の皆さまのご協力により開催されています。</p>
   <ul>
-    <li>協賛: 〇〇株式会社 / △△商店</li>
-    <li>後援: ○○市 / ○○観光協会</li>
+    <li>協賛: </li>
+    <li>後援: </li>
   </ul>
 </section>
 
 <footer>
-  <p>&copy; 2025 キムワイプイベント実行委員会</p>
+  <p>&copy; 2025 キムワイプ卓球実行委員会</p>
 </footer>
 
 </body>
