@@ -3,243 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>キムワイプ卓球</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>キムワイプイベント 2025</title>
   <style>
-    html {
-      scroll-padding-top: 160px;
-    }
     body {
-      font-family: 'Helvetica Neue', sans-serif;
       margin: 0;
-      padding: 0;
-      color: #333;
+      font-family: Arial, sans-serif;
       background: url('background.png') no-repeat center center fixed;
       background-size: cover;
-      scroll-behavior: smooth;
+      color: #333;
     }
     header {
-      background: rgba(0, 128, 0, 0.85);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 100;
+      width: 100%;
+      background: rgba(0, 100, 0, 0.9);
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      z-index: 1000;
     }
-    nav {
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1rem;
     }
-    nav a {
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s, transform 0.3s;
-    }
-    nav a:hover {
-      color: #c8ffb0;
-      transform: scale(1.1);
     }
     section {
-      max-width: 900px;
-      width: 90%;
-      margin: 2rem auto;
-      padding: 1.5rem;
+      max-width: 1000px;
+      margin: 120px auto 40px auto;
       background: rgba(255,255,255,0.9);
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
+      padding: 30px;
+      border-radius: 10px;
     }
     h2 {
-      border-left: 6px solid #0a8c0a;
-      padding-left: 0.5rem;
-      margin-bottom: 1rem;
+      color: #006400;
+      border-bottom: 2px solid #006400;
+      padding-bottom: 5px;
     }
-    ul {
-      line-height: 1.8;
+    .sns {
+      text-align: center;
+      margin-top: 20px;
     }
-    .sns-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap; /* 横幅が狭いときは折り返す */
-    }
-    .sns-links a {
-      margin-right: 1rem;
+    .sns a {
+      margin: 0 10px;
+      font-size: 24px;
+      color: #006400;
       text-decoration: none;
-      color: #0a8c0a;
-      font-weight: bold;
-      font-size: 1.2rem;
-      transition: color 0.3s;
     }
-    .sns-links a:hover {
-      color: #4caf50;
+    .map-container {
+      text-align: center;
     }
-    .sns-links i {
-      margin-right: 0.5rem;
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
     }
     footer {
       text-align: center;
-      padding: 2rem;
-      margin-top: 2rem;
-      background: rgba(238,238,238,0.9);
-      color: #555;
-    }
-    form input, form textarea, form button {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-    form button {
-      background-color: #0a8c0a;
+      padding: 20px;
+      background: rgba(0,100,0,0.9);
       color: white;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    form button:hover {
-      background-color: #4caf50;
-    }
-    #loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      font-size: 2rem;
-      font-weight: bold;
-      color: #0a8c0a;
-      opacity: 1;
-      transition: opacity 0.5s ease;
-    }
-    #loader.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    @media (max-width: 600px) {
-      header, section, footer {
-        padding: 1rem;
-      }
-      nav a {
-        font-size: 0.9rem;
-      }
-      form input, form textarea, form button {
-        font-size: 0.9rem;
-      }
-      iframe {
-        width: 100%;
-        height: 300px;
-      }
     }
   </style>
-  <script>
-    window.addEventListener('load', () => {
-      const loader = document.getElementById('loader');
-      setTimeout(() => {
-        loader.classList.add('hidden');
-      }, 2000);
-    });
-
-    document.addEventListener('scroll', () => {
-      document.querySelectorAll('section').forEach(sec => {
-        const rect = sec.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          sec.classList.add('visible');
-        }
-      });
-    });
-  </script>
+  <!-- FontAwesomeアイコン -->
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#basic">基本情報</a></li>
+        <li><a href="#overview">概要</a></li>
+        <li><a href="#sns">SNS</a></li>
+        <li><a href="#support">協賛・後援</a></li>
+        <li><a href="#access">アクセス</a></li>
+        <li><a href="#contact">問い合わせ</a></li>
+        <li><a href="history.html">成り立ち</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div id="loader">キムワイプ</div>
+  <section id="basic">
+    <h2>基本情報</h2>
+    <p>開催日時：2025年◯月◯日</p>
+    <p>場所：東京都江戸川区 東京都立産業技術高専</p>
+  </section>
 
-<header>
-  <h1>キムワイプ卓球</h1>
-  <p>～～</p>
-  <nav>
-    <a href="#info">基本情報</a>
-    <a href="#overview">概要</a>
-    <a href="#sns">SNS</a>
-    <a href="#access">アクセス</a>
-    <a href="#contact">お問い合わせ</a>
-    <a href="#support">協賛・後援</a>
-  </nav>
-</header>
+  <section id="overview">
+    <h2>概要</h2>
+    <p>キムワイプをテーマにしたユニークな卓球イベントです！</p>
+  </section>
 
-<section id="info">
-  <h2>基本情報</h2>
-  <ul>
-    <li><strong>開催日:</strong> 2025年9月13日、9月14日</li>
-    <li><strong>時間:</strong> 13日　〇時～〇時</li>
-    <li><strong>時間:</strong> 14日　〇時～〇時</li>
-    <li><strong>場所:</strong> 校内4階405講義室</li>
-  </ul>
-</section>
+  <section id="sns">
+    <h2>SNS</h2>
+    <div class="sns">
+      <a href="https://twitter.com/2025sthkimwipe" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/sthkimwipe" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
 
-<section id="overview">
-  <h2>概要</h2>
-  <p>
-    このイベントでは　を楽しんでいただけます。<br>
-    な企画を予定しています。
-  </p>
-</section>
+  <section id="support">
+    <h2>協賛・後援</h2>
+    <p>各企業様のご支援に感謝いたします。</p>
+  </section>
 
-<section id="sns">
-  <h2>SNSのご紹介</h2>
-  <div class="sns-links">
-    <a href="https://twitter.com/2025sthkimwipe" target="_blank"><i class="fab fa-twitter"></i>公式Twitter(X)</a>
-    <a href="https://instagram.com/sthkimwipe" target="_blank"><i class="fab fa-instagram"></i>公式Instgram</a>
-    <a href="https://www.metro.ed.jp/kagakugijyutu-h/" target="_blank"><i class="fas fa-school"></i>都立科学技術高校ホームページ</a>
-  </div>
-</section>
+  <section id="access">
+    <h2>アクセス</h2>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.1467929249502!2d139.82121965681807!3d35.68716580190954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601888e6f889ee21%3A0xe63d216bd0ffd414!2z5p2x5Lqs6YO956uL56eR5a2m5oqA6KGT6auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1755871832310!5m2!1sja!2sjp"
+        loading="lazy"></iframe>
+    </div>
+  </section>
 
-<section id="access">
-  <h2>アクセス</h2>
-  <p>東京メトロ半蔵門線「住吉」駅または都営新宿線「住吉」駅「西大島」駅下車徒歩８分</p>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.1467929249502!2d139.82121965681807!3d35.68716580190954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601888e6f889ee21%3A0xe63d216bd0ffd414!2z5p2x5Lqs6YO956uL56eR5a2m5oqA6KGT6auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1755871832310!5m2!1sja!2sjp" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  
   <section id="contact">
-  <h2>お問い合わせ</h2>
-  <form action="mailto:2025sthkimwipe.tabletennis@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="お名前" required>
-    <input type="email" name="email" placeholder="メールアドレス" required>
-    <textarea name="message" rows="5" placeholder="お問い合わせ内容" required></textarea>
-    <button type="submit">送信</button>
-  </form>
-</section>
+    <h2>問い合わせ</h2>
+    <p>ご質問はメールでお願いします：  
+      <a href="mailto:2025sthkimwipe.tabletennis@gmail.com">2025sthkimwipe.tabletennis@gmail.com</a>
+    </p>
+  </section>
 
-<section id="support">
-  <h2>協賛・後援</h2>
-  <p>本イベントは以下の皆さまのご協力により開催されています。</p>
-  <ul>
-    <li>協賛:</li>
-    <li>後援:</li>
-  </ul>
-</section>
-
-<footer>
-  <p>&copy; 2025 キムワイプ卓球実行委員会</p>
-</footer>
-
+  <footer>
+    <p>&copy; 2025 キムワイプイベント</p>
+  </footer>
 </body>
 </html>
