@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>イベントページ</title>
+  <title>キムワイプイベント</title>
   <style>
     body {
       font-family: 'Helvetica Neue', sans-serif;
@@ -15,7 +15,7 @@
       scroll-behavior: smooth;
     }
     header {
-      background: rgba(76, 175, 239, 0.85);
+      background: rgba(0, 128, 0, 0.85); /* 緑色主体 */
       color: white;
       padding: 2rem;
       text-align: center;
@@ -36,7 +36,7 @@
       transition: color 0.3s, transform 0.3s;
     }
     nav a:hover {
-      color: #ffeb3b;
+      color: #c8ffb0;
       transform: scale(1.1);
     }
     section {
@@ -55,7 +55,7 @@
       transform: translateY(0);
     }
     h2 {
-      border-left: 6px solid #4cafef;
+      border-left: 6px solid #0a8c0a;
       padding-left: 0.5rem;
       margin-bottom: 1rem;
     }
@@ -65,12 +65,12 @@
     .sns-links a {
       margin-right: 1rem;
       text-decoration: none;
-      color: #4cafef;
+      color: #0a8c0a;
       font-weight: bold;
       transition: color 0.3s;
     }
     .sns-links a:hover {
-      color: #ff5722;
+      color: #4caf50;
     }
     footer {
       text-align: center;
@@ -94,17 +94,23 @@
       z-index: 9999;
       font-size: 2rem;
       font-weight: bold;
-      color: #4cafef;
+      color: #0a8c0a;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+    #loader.hidden {
+      opacity: 0;
+      pointer-events: none;
     }
   </style>
   <script>
     window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
       setTimeout(() => {
-        document.getElementById('loader').style.display = 'none';
-      }, 2000);
+        loader.classList.add('hidden');
+      }, 2000); // 2秒後にフェードアウト
     });
 
-    // スクロール時にアニメーションを追加
     document.addEventListener('scroll', () => {
       document.querySelectorAll('section').forEach(sec => {
         const rect = sec.getBoundingClientRect();
@@ -120,7 +126,7 @@
 <div id="loader">読み込み中...</div>
 
 <header>
-  <h1>〇〇イベント</h1>
+  <h1>キムワイプイベント</h1>
   <p>～楽しさとつながりを届ける～</p>
   <nav>
     <a href="#info">基本情報</a>
@@ -167,7 +173,7 @@
 </section>
 
 <footer>
-  <p>&copy; 2025 〇〇イベント実行委員会</p>
+  <p>&copy; 2025 キムワイプイベント実行委員会</p>
 </footer>
 
 </body>
