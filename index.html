@@ -6,7 +6,9 @@
   <title>キムワイプ卓球</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    html { scroll-padding-top: 160px; }
+    html {
+      scroll-padding-top: 80px;
+    }
     body {
       font-family: 'Helvetica Neue', sans-serif;
       margin: 0;
@@ -16,32 +18,39 @@
       background-size: cover;
       scroll-behavior: smooth;
     }
-    header {
-      background: rgba(0, 128, 0, 0.85);
+
+    /* タイトル部分 */
+    .header-top {
+      text-align: center;
+      background: rgba(0,128,0,0.85);
       color: white;
       padding: 2rem;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
-    nav {
+
+    /* ナビゲーションだけ固定 */
+    nav.sticky-nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-top: 1rem;
+      background: rgba(0,128,0,0.85);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 0;
     }
-    nav a {
+    nav.sticky-nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      padding: 0.5rem 1rem;
       transition: color 0.3s, transform 0.3s;
     }
-    nav a:hover {
+    nav.sticky-nav a:hover {
       color: #c8ffb0;
       transform: scale(1.1);
     }
+
     section {
       max-width: 900px;
       width: 90%;
@@ -54,9 +63,18 @@
       transform: translateY(30px);
       transition: all 0.8s ease;
     }
-    section.visible { opacity: 1; transform: translateY(0); }
-    h2 { border-left: 6px solid #0a8c0a; padding-left: 0.5rem; margin-bottom: 1rem; }
-    ul { line-height: 1.8; }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      border-left: 6px solid #0a8c0a;
+      padding-left: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    ul {
+      line-height: 1.8;
+    }
     .sns-links {
       display: flex;
       justify-content: center;
@@ -71,9 +89,19 @@
       font-size: 1.2rem;
       transition: color 0.3s;
     }
-    .sns-links a:hover { color: #4caf50; }
-    .sns-links i { margin-right: 0.5rem; }
-    footer { text-align: center; padding: 2rem; margin-top: 2rem; background: rgba(238,238,238,0.9); color: #555; }
+    .sns-links a:hover {
+      color: #4caf50;
+    }
+    .sns-links i {
+      margin-right: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+      background: rgba(238,238,238,0.9);
+      color: #555;
+    }
     form {
       display: flex;
       flex-direction: column;
@@ -96,11 +124,15 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
-    form button:hover { background-color: #4caf50; }
+    form button:hover {
+      background-color: #4caf50;
+    }
     #loader {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: #fff;
       display: flex;
       justify-content: center;
@@ -112,24 +144,41 @@
       opacity: 1;
       transition: opacity 0.5s ease;
     }
-    #loader.hidden { opacity: 0; pointer-events: none; }
+    #loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     @media (max-width: 600px) {
-      header, section, footer { padding: 1rem; }
-      nav a { font-size: 0.9rem; }
-      form input, form textarea, form button { font-size: 0.9rem; }
-      iframe { width: 100%; height: 300px; }
+      .header-top, section, footer {
+        padding: 1rem;
+      }
+      nav.sticky-nav a {
+        font-size: 0.9rem;
+      }
+      form input, form textarea, form button {
+        font-size: 0.9rem;
+      }
+      iframe {
+        width: 100%;
+        height: 300px;
+      }
     }
   </style>
   <script>
     window.addEventListener('load', () => {
       const loader = document.getElementById('loader');
-      setTimeout(() => { loader.classList.add('hidden'); }, 2000);
+      setTimeout(() => {
+        loader.classList.add('hidden');
+      }, 2000);
     });
 
     document.addEventListener('scroll', () => {
       document.querySelectorAll('section').forEach(sec => {
         const rect = sec.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) { sec.classList.add('visible'); }
+        if (rect.top < window.innerHeight - 100) {
+          sec.classList.add('visible');
+        }
       });
     });
   </script>
@@ -139,9 +188,11 @@
 <div id="loader">Loding Now...</div>
 
 <header>
-  <h1>キムワイプ卓球</h1>
-  <p>～～</p>
-  <nav>
+  <div class="header-top">
+    <h1>キムワイプ卓球</h1>
+    <p>～～</p>
+  </div>
+  <nav class="sticky-nav">
     <a href="#info">基本情報</a>
     <a href="#overview">概要</a>
     <a href="#sns">SNS</a>
@@ -155,8 +206,8 @@
   <h2>基本情報</h2>
   <ul>
     <li><strong>開催日:</strong> 2025年9月13日、9月14日</li>
-    <li><strong>時間:</strong> 13日　〇時～〇時</li>
-    <li><strong>時間:</strong> 14日　〇時～〇時</li>
+    <li><strong>時間:</strong> 13日　13時～15時</li>
+    <li><strong>時間:</strong> 14日　09時～15時</li>
     <li><strong>場所:</strong> 校内4階405講義室</li>
   </ul>
 </section>
@@ -164,8 +215,7 @@
 <section id="overview">
   <h2>概要</h2>
   <p>
-    開発中<br>
-    開発中
+    キムワイプを通常の卓球で使用する用具の代用として使って行う卓球のことです。<br>
   </p>
 </section>
 
@@ -173,7 +223,7 @@
   <h2>SNSのご紹介</h2>
   <div class="sns-links">
     <a href="https://twitter.com/2025sthkimwipe" target="_blank"><i class="fab fa-twitter"></i>公式Twitter(X)</a>
-    <a href="https://instagram.com/2025sthkimwipe.tabletennis" target="_blank"><i class="fab fa-instagram"></i>公式Instgram</a>
+    <a href="https://instagram.com/sthkimwipe" target="_blank"><i class="fab fa-instagram"></i>公式Instgram</a>
     <a href="https://www.metro.ed.jp/kagakugijyutu-h/" target="_blank"><i class="fas fa-school"></i>都立科学技術高校ホームページ</a>
   </div>
 </section>
@@ -187,7 +237,7 @@
 <section id="contact">
   <h2>お問い合わせ</h2>
   <p>以下のボタンを押すとメールソフトが開きます。</p>
-  <a href="mailto:2025sthkimwipe.tabletennis@gmail.com" 
+  <a href="mailto:2025sthkimwipe.tabletennis@gmail.com"
      style="display:inline-block; padding:0.8rem 1.5rem; background:#0a8c0a; color:white; text-decoration:none; border-radius:6px; font-weight:bold;"
      >メールを送る</a>
 </section>
@@ -196,8 +246,9 @@
   <h2>協賛・後援</h2>
   <p>本イベントは以下の皆さまのご協力により開催されています。</p>
   <ul>
-    <li>協賛:</li>
-    <li>後援:</li>
+    <li>協賛:<a herf='https://www.iktta.org/index.ja.html' target="_blank">国際キムワイプ卓球協会</a>様</li>
+    <li>協賛:<a herf='https://x.com/jp_kimwipes' target="_blank">日本キムワイプ協会</a>様</li>
+    <li>後援:<a herf='https://ut.tokyo.jp.iktta.org' target="_blank">東京大学キムワイプ卓球会</a>様</li>
   </ul>
 </section>
 
