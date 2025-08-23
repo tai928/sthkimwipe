@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>キムワイプ卓球 - 成り立ち</title>
+  <title>キムワイプ卓球とは</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     html { scroll-padding-top: 160px; }
@@ -54,81 +54,31 @@
       transform: translateY(30px);
       transition: all 0.8s ease;
     }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    h2 {
-      border-left: 6px solid #0a8c0a;
-      padding-left: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    p, ul {
-      line-height: 1.8;
-    }
-    .sns-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .sns-links a {
-      text-decoration: none;
-      color: #0a8c0a;
-      font-weight: bold;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
-    .sns-links a:hover {
-      color: #4caf50;
-    }
-    .sns-links i {
-      margin-right: 0.5rem;
-    }
+    section.visible { opacity: 1; transform: translateY(0); }
+    h2 { border-left: 6px solid #0a8c0a; padding-left: 0.5rem; margin-bottom: 1rem; }
+    p, ul { line-height: 1.8; }
+    .sns-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .sns-links a { text-decoration: none; color: #0a8c0a; font-weight: bold; font-size: 1.2rem; transition: color 0.3s; }
+    .sns-links a:hover { color: #4caf50; }
+    .sns-links i { margin-right: 0.5rem; }
     #loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      font-size: 2rem;
-      font-weight: bold;
-      color: #0a8c0a;
-      opacity: 1;
-      transition: opacity 0.5s ease;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: #fff; display: flex; justify-content: center; align-items: center;
+      z-index: 9999; font-size: 2rem; font-weight: bold; color: #0a8c0a;
+      opacity: 1; transition: opacity 0.5s ease;
     }
-    #loader.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
+    #loader.hidden { opacity: 0; pointer-events: none; }
     @media (max-width: 600px) {
-      header, section {
-        padding: 1rem;
-      }
-      nav a {
-        font-size: 0.9rem;
-      }
+      header, section { padding: 1rem; }
+      nav a { font-size: 0.9rem; }
     }
   </style>
   <script>
-    window.addEventListener('load', () => {
-      const loader = document.getElementById('loader');
-      setTimeout(() => {
-        loader.classList.add('hidden');
-      }, 2000);
-    });
-
+    window.addEventListener('load', () => { const loader = document.getElementById('loader'); setTimeout(() => { loader.classList.add('hidden'); }, 2000); });
     document.addEventListener('scroll', () => {
       document.querySelectorAll('section').forEach(sec => {
         const rect = sec.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          sec.classList.add('visible');
-        }
+        if (rect.top < window.innerHeight - 100) { sec.classList.add('visible'); }
       });
     });
   </script>
@@ -138,7 +88,7 @@
 <div id="loader">キムワイプ</div>
 
 <header>
-  <h1>キムワイプ卓球 成り立ち</h1>
+  <h1>キムワイプ卓球とは</h1>
   <nav>
     <a href="index.html">トップに戻る</a>
     <a href="#history">成り立ち</a>
@@ -147,10 +97,12 @@
 </header>
 
 <section id="history">
-  <h2>成り立ち</h2>
-  <p>成り立ち<br>
-     成り立ち</p>
-  <p>只今開発中</p>
+  <h2>キムワイプ卓球?!</h2>
+  <p>キムワイプを通常の卓球で使用する用具の代用として使って行う卓球のことである。その場にある机をコートとして用い、研究者が実験の間の息抜きとして、研究室にあったキムワイプと卓球ボールを使って打ち合ったのがはじまり。キムワイプ卓球は、勝敗を決めることよりもコミニュケーションを深めることが主な目的である。そのようなことから、『サイエンティフィック・スポーツ』として位置付けられている。
+
+また、2008 年に<a href="https://www.iktta.org/about/index.ja.html" >国際キムワイプ卓球協会(略:KTTA)</a>が 発足しており、現在の会員数は637名にのぼる。その他、東大をはじめとした大学にキムワイプ卓球会がある。<br>
+     </p>
+  <p>開発中</p>
 </section>
 
 <section id="sns">
