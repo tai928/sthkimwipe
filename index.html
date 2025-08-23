@@ -186,12 +186,11 @@
 
 <section id="contact">
   <h2>お問い合わせ</h2>
-  <form id="contact-form" action="https://formspree.io/f/yourformid" method="POST">
-    <input type="text" name="name" placeholder="お名前" required>
-    <input type="email" name="email" placeholder="メールアドレス" required>
-    <textarea name="message" rows="5" placeholder="お問い合わせ内容" required></textarea>
-    <button type="submit">送信</button>
-  </form>
+  <p>以下のボタンを押すとメールソフトが開きます。件名・本文は自分で入力してください。</p>
+  <a href="mailto:2025sthkimwipe.tabletennis@gmail.com" 
+     style="display:inline-block; padding:0.8rem 1.5rem; background:#0a8c0a; color:white; text-decoration:none; border-radius:6px; font-weight:bold;"
+     >メールを送る</a>
+</section>
   <p id="form-message" style="text-align:center; color:green; display:none;">送信が完了しました！</p>
   <script>
     const form = document.getElementById('contact-form');
