@@ -16,7 +16,26 @@
       background-size: cover;
       scroll-behavior: smooth;
     }
-    header { position: sticky; top: 0; z-index: 100; }
+
+    nav.sticky-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: rgba(0,128,0,0.85);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav.sticky-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+    }
+    nav.sticky-nav a:hover { color: #c8ffb0; transform: scale(1.1); }
+
     .header-top {
       background: rgba(0, 128, 0, 0.85);
       color: white;
@@ -29,26 +48,7 @@
       transform: translateY(-20px);
       pointer-events: none;
     }
-    nav.sticky-nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      background: rgba(0,128,0,0.85);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-    }
-    nav.sticky-nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s, transform 0.3s;
-    }
-    nav.sticky-nav a:hover {
-      color: #c8ffb0;
-      transform: scale(1.1);
-    }
+
     section {
       max-width: 900px;
       width: 90%;
@@ -62,28 +62,20 @@
       transition: all 0.8s ease;
     }
     section.visible { opacity: 1; transform: translateY(0); }
+
     h2 { border-left: 6px solid #0a8c0a; padding-left: 0.5rem; margin-bottom: 1rem; }
     ul { line-height: 1.8; }
-    .sns-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .sns-links a {
-      text-decoration: none;
-      color: #0a8c0a;
-      font-weight: bold;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
+    .sns-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .sns-links a { text-decoration: none; color: #0a8c0a; font-weight: bold; font-size: 1.2rem; transition: color 0.3s; }
     .sns-links a:hover { color: #4caf50; }
     .sns-links i { margin-right: 0.5rem; }
+
     footer { text-align: center; padding: 2rem; margin-top: 2rem; background: rgba(238,238,238,0.9); color: #555; }
+
     form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto; }
-    form input, form textarea, form button { width: 100%; box-sizing: border-box; padding: 0.8rem; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem; }
-    form button { background-color: #0a8c0a; color: white; border: none; cursor: pointer; transition: background-color 0.3s; }
+    form button { width: 100%; padding: 0.8rem; border-radius: 6px; border: none; font-size: 1rem; background-color: #0a8c0a; color: white; cursor: pointer; transition: background-color 0.3s; }
     form button:hover { background-color: #4caf50; }
+
     #loader {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -97,17 +89,17 @@
       transition: opacity 0.5s ease;
     }
     #loader.hidden { opacity: 0; pointer-events: none; }
+
     @media (max-width: 600px) {
       .header-top, nav.sticky-nav, section, footer { padding: 1rem; }
       nav.sticky-nav a { font-size: 0.9rem; }
-      form input, form textarea, form button { font-size: 0.9rem; }
+      form button { font-size: 0.9rem; }
       iframe { width: 100%; height: 300px; }
     }
   </style>
   <script>
     window.addEventListener('load', () => {
-      const loader = document.getElementById('loader');
-      setTimeout(() => { loader.classList.add('hidden'); }, 2000);
+      document.getElementById('loader').classList.add('hidden');
     });
 
     document.addEventListener('scroll', () => {
@@ -127,10 +119,6 @@
 <div id="loader">Loding Now...</div>
 
 <header>
-  <div class="header-top" id="headerTop">
-    <h1>キムワイプ卓球</h1>
-    <p>～～</p>
-  </div>
   <nav class="sticky-nav">
     <a href="#info">基本情報</a>
     <a href="#overview">概要</a>
@@ -139,21 +127,25 @@
     <a href="#contact">お問い合わせ</a>
     <a href="#support">協賛・後援</a>
   </nav>
+  <div class="header-top" id="headerTop">
+    <h1>キムワイプ卓球</h1>
+    <p>～～</p>
+  </div>
 </header>
 
 <section id="info">
   <h2>基本情報</h2>
   <ul>
     <li><strong>開催日:</strong> 2025年9月13日、9月14日</li>
-    <li><strong>時間:</strong> 13日　13時～15時</li>
-    <li><strong>時間:</strong> 14日　09時～15時</li>
+    <li><strong>時間:</strong> 13日　〇時～〇時</li>
+    <li><strong>時間:</strong> 14日　〇時～〇時</li>
     <li><strong>場所:</strong> 校内4階405講義室</li>
   </ul>
 </section>
 
 <section id="overview">
   <h2>概要</h2>
-  <p>キムワイプを通常の卓球で使用する用具の代用として使って行う卓球のことです。<br></p>
+  <p>このイベントでは　を楽しんでいただけます。<br>な企画を予定しています。</p>
 </section>
 
 <section id="sns">
@@ -173,7 +165,7 @@
 
 <section id="contact">
   <h2>お問い合わせ</h2>
-  <form action="mailto:2025sthkimwipe.tabletennis@gmail.com" method="get">
+  <form>
     <button type="button" onclick="window.location.href='mailto:2025sthkimwipe.tabletennis@gmail.com'">メールで問い合わせ</button>
   </form>
 </section>
