@@ -73,15 +73,6 @@
       nav a { font-size: 0.9rem; }
     }
   </style>
-  <script>
-    window.addEventListener('load', () => { const loader = document.getElementById('loader'); setTimeout(() => { loader.classList.add('hidden'); }, 2000); });
-    document.addEventListener('scroll', () => {
-      document.querySelectorAll('section').forEach(sec => {
-        const rect = sec.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) { sec.classList.add('visible'); }
-      });
-    });
-  </script>
 </head>
 <body>
 
